@@ -1,0 +1,15 @@
+black
+markdown-customblocks
+mdx-truly-sane-lists
+mkdocs
+mkdocs-gen-files
+mkdocs-git-authors-plugin
+mkdocs-git-committers-plugin
+mkdocs-git-revision-date-localized-plugin
+mkdocs-include-markdown-plugin
+mkdocs-literate-nav
+mkdocs-material
+mkdocs-minify-plugin
+mkdocs-section-index
+pre-commit
+python-frontmatter

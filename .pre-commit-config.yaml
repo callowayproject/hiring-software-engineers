@@ -1,0 +1,46 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-json
+        exclude: test.*
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-yaml
+        exclude: |
+          (?x)^(
+            test.*|
+            mkdocs.yml
+          )$
+        args: [--allow-multiple-documents]
+      - id: debug-statements
+      - id: end-of-file-fixer
+        exclude: "^tests/resources/"
+      - id: fix-byte-order-marker
+      - id: requirements-txt-fixer
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+    -   id: detect-secrets
+        additional_dependencies: ["gibberish-detector"]
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 0.7.17
+    hooks:
+    - id: mdformat
+      additional_dependencies:
+      - mdformat-gfm
+      - mdformat-black
+      - mdformat-admon
+      - mdformat-deflist
+      - mdformat-frontmatter
+      - mdformat-mkdocs
+      - mdformat-tables
+      - mdformat-toc
+
+ci:
+  autofix_prs: false
